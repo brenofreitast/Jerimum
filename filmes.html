@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filmes | Jerimum</title><link rel="stylesheet" href="css/estilo.css"></head>
+<body><header>
+ <div class="topbar">
+  <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <a class="brand" href="index.html">JERIMUM</a>
+  <div class="tagline">Sua viagem começa aqui</div>
+ </div>
+ <nav class="menu-overlay" id="mainMenu" aria-label="Menu principal">
+  <a class="menu-link" href="filmes.html">🎬 Filmes</a>
+  <a class="menu-link" href="series.html">📺 Séries</a>
+  <button class="category-trigger" id="categoryTrigger" aria-expanded="false">▸ Categorias</button>
+  <div class="submenu" id="categorySubmenu">
+   <a href="categorias/comedia.html">Comédia</a><a href="categorias/terror.html">Terror</a>
+   <a href="categorias/acao.html">Ação</a><a href="categorias/drama.html">Drama</a>
+  </div>
+ </nav>
+</header><main class="page-wrap"><a class="back-link" href="index.html">← Voltar para a página inicial</a><div class="eyebrow">Acervo Jerimum</div><h1>Filmes</h1><section id="lista" class="catalog-list"></section></main><footer>JERIMUM • LOCADORA</footer>
+<script src="js/dados.js"></script><script src="js/site.js"></script><script>renderLista(catalogo.filter(i=>i.type==="Filme"));</script></body></html>

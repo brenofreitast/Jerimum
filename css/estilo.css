@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* Define as cores principais utilizadas na identidade visual retrô do site. */
+:root {
+    --bg: #080914;
+    --panel: #111426;
+    --pink: #ff2d75;
+    --cyan: #00e5ff;
+    --purple: #8b35ff;
+    --yellow: #ffe66d;
+    --white: #f5f4ff
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(ellipse at top, #202044 0, #090a17 52%, #05060d 100%);
+    color: var(--white);
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    min-height: 100vh
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    background: repeating-linear-gradient(0deg, transparent 0 3px, #fff 4px);
+    z-index: 0
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button {
+    font: inherit;
+    cursor: pointer
+}
+
+header,
+.page-wrap,
+footer {
+    position: relative;
+    z-index: 1
+}
+
+/* Organiza o cabeçalho, posicionando a logo e o botão do menu. */
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px clamp(18px, 5vw, 70px);
+    border-bottom: 1px solid #ff2d754d;
+    background: #080914e8;
+    box-shadow: 0 5px 30px #ff2d7520
+}
+
+.brand {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(20px, 4vw, 34px);
+    letter-spacing: -3px;
+    color: var(--pink);
+    text-shadow: 3px 3px 0 var(--cyan), 0 0 22px #ff2d75;
+    white-space: nowrap
+}
+
+.menu-button {
+    width: 46px;
+    height: 42px;
+    border: 1px solid var(--cyan);
+    border-radius: 7px;
+    background: #111426;
+    color: var(--cyan);
+    font-size: 25px;
+    line-height: 1;
+    box-shadow: 0 0 12px #00e5ff55
+}
+
+.tagline {
+    margin-left: auto;
+    color: #b8bad0;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase
+}
+
+.page-wrap {
+    max-width: 1120px;
+    margin: auto;
+    padding: 30px 22px 70px
+}
+
+.hero {
+    padding: 34px 0 24px
+}
+
+.eyebrow {
+    color: var(--cyan);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px
+}
+
+h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(23px, 4vw, 40px);
+    line-height: 1.5;
+    color: var(--white);
+    text-shadow: 3px 3px 0 var(--purple), 0 0 18px #ff2d7577;
+    margin: 14px 0
+}
+
+.hero p {
+    font-size: 19px;
+    color: #c8c9d8;
+    max-width: 720px;
+    line-height: 1.5
+}
+
+.section-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--yellow);
+    margin: 30px 0 18px
+}
+
+.catalog-list {
+    display: grid;
+    gap: 16px
+}
+
+/* Organiza o cabeçalho, posicionando a logo e o botão do menu. */
+.media-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 14px;
+    background: linear-gradient(100deg, #14182b, #0e1020);
+    border: 1px solid #393452;
+    border-left: 4px solid var(--pink);
+    border-radius: 10px;
+    transition: .2s
+}
+
+.media-row:hover {
+    transform: translateY(-2px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px #00e5ff22
+}
+
+.poster {
+    height: 190px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ffffff55;
+    background: linear-gradient(145deg, #20104c, #e62d78)
+}
+
+.poster:before {
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 50%;
+    background: #ffffff18;
+    transform: rotate(-35deg);
+    top: 18%
+}
+
+.poster span {
+    position: relative;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    line-height: 1.8;
+    text-shadow: 2px 2px #000
+}
+
+.poster.miami {
+    background: linear-gradient(145deg, #ff8b5c, #7138a8 55%, #081f49)
+}
+
+.poster.mac {
+    background: linear-gradient(145deg, #e8b44b, #325d52)
+}
+
+.poster.xfiles,
+.poster.shining {
+    background: linear-gradient(145deg, #080b24, #254e65, #111)
+}
+
+.poster.buffy,
+.poster.scream {
+    background: linear-gradient(145deg, #160c35, #a52248, #070711)
+}
+
+.poster.fresh,
+.poster.seinfeld,
+.poster.dumb {
+    background: linear-gradient(145deg, #f6c945, #e74e65, #293b91)
+}
+
+.poster.er,
+.poster.90210,
+.poster.shawshank,
+.poster.forrest {
+    background: linear-gradient(145deg, #126b78, #26334e, #ad7a53)
+}
+
+.poster.diehard,
+.poster.t2,
+.poster.speed {
+    background: linear-gradient(145deg, #ed4b32, #242c5d, #111)
+}
+
+.poster.matrix {
+    background: linear-gradient(145deg, #061a16, #16865e, #020806)
+}
+
+.poster.bttf {
+    background: linear-gradient(145deg, #172e71, #e46d38, #e9c45d)
+}
+
+.media-info h2 {
+    font-size: 24px;
+    margin: 0 0 8px;
+    color: var(--white)
+}
+
+.media-info h2 a:hover {
+    color: var(--cyan)
+}
+
+.meta {
+    color: var(--cyan);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px
+}
+
+.media-info p {
+    color: #c3c5d6;
+    font-size: 17px;
+    line-height: 1.45;
+    margin: 0 0 12px
+}
+
+.link-more,
+.action-button {
+    display: inline-block;
+    border: 1px solid var(--pink);
+    color: #fff;
+    background: #ff2d7520;
+    padding: 9px 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: .5px
+}
+
+.link-more:hover,
+.action-button:hover {
+    background: var(--pink);
+    box-shadow: 0 0 15px #ff2d7577
+}
+
+/* Estiliza o menu de navegação, que aparece quando o usuário clica no botão principal. */
+.menu-overlay {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 78px;
+    left: clamp(18px, 5vw, 70px);
+    width: 230px;
+    background: #0d1020;
+    border: 1px solid var(--cyan);
+    box-shadow: 0 0 24px #00e5ff44;
+    border-radius: 8px;
+    padding: 8px
+}
+
+.menu-overlay.open {
+    display: block
+}
+
+.menu-link,
+.category-trigger {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 13px 14px;
+    color: #f4f3ff;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ffffff16;
+    font-weight: bold;
+    font-size: 17px
+}
+
+.menu-link:hover,
+.category-trigger:hover {
+    color: var(--cyan);
+    background: #ffffff0a
+}
+
+.submenu {
+    display: none;
+    margin: 4px 0 6px 14px;
+    border-left: 2px solid var(--pink)
+}
+
+.submenu.open {
+    display: block
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 14px;
+    color: #d6d7e6
+}
+
+.submenu a:hover {
+    color: var(--yellow)
+}
+
+.back-link {
+    display: inline-block;
+    margin: 6px 0 18px;
+    color: var(--cyan);
+    font-weight: bold
+}
+
+.back-link:hover {
+    color: var(--yellow)
+}
+
+/* Organiza o cartaz e as informações na página individual de cada filme ou série. */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    align-items: start
+}
+
+.detail-layout .poster {
+    height: 360px
+}
+
+.detail-panel {
+    background: #111426;
+    border: 1px solid #393452;
+    padding: 22px;
+    border-radius: 9px;
+    margin: 18px 0
+}
+
+.detail-panel h2 {
+    color: var(--yellow);
+    font-family: 'Press Start 2P';
+    font-size: 13px;
+    line-height: 1.7
+}
+
+.detail-panel p,
+.detail-panel li {
+    color: #d0d1df;
+    font-size: 17px;
+    line-height: 1.6
+}
+
+.detail-panel ul {
+    padding-left: 20px
+}
+
+.empty {
+    padding: 25px;
+    border: 1px dashed #69617e;
+    color: #c7c5d7
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #7f829b;
+    border-top: 1px solid #ffffff18;
+    font-size: 13px;
+    letter-spacing: 1px
+}
+
+/* Adapta o layout para telas menores, como celulares e tablets. */
+@media(max-width:650px) {
+    .tagline {
+        display: none
+    }
+
+    .media-row {
+        grid-template-columns: 105px 1fr;
+        gap: 13px
+    }
+
+    .poster {
+        height: 150px
+    }
+
+    .media-info h2 {
+        font-size: 19px
+    }
+
+    .media-info p {
+        font-size: 15px
+    }
+
+    .detail-layout {
+        grid-template-columns: 1fr
+    }
+
+    .detail-layout .poster {
+        height: 260px;
+        width: 190px
+    }
+
+    .page-wrap {
+        padding: 22px 15px 50px
+    }
+}
+
+
+.poster {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ajusta as imagens dos cartazes para preencher o espaço disponível sem distorção. */
+.poster img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 2;
+}
+
+.poster .poster-fallback {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 12px;
+    text-align: center;
+}
+
+.poster:before {
+    z-index: 0;
+}
+
+.poster.sem-imagem img {
+    display: none;
+}
+
+/* Menu sempre acima do conteúdo, inclusive em telas menores. */
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+.menu-overlay {
+    z-index: 1001;
+    top: calc(100% - 8px);
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.submenu {
+    position: relative;
+    z-index: 1002;
+}
+
+@media (max-width: 650px) {
+    .menu-overlay {
+        width: 230px;
+        max-width: calc(100vw - 36px);
+    }
+
+    .menu-link,
+    .category-trigger {
+        padding: 15px;
+        font-size: 17px;
+    }
+}

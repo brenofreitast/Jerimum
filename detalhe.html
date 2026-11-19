@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes | Jerimum</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">☰</button>
+            <a class="brand" href="index.html">JERIMUM</a>
+            <div class="tagline">Sua viagem começa aqui</div>
+        </div>
+        <nav class="menu-overlay" id="mainMenu" aria-label="Menu principal">
+            <a class="menu-link" href="filmes.html">🎬 Filmes</a>
+            <a class="menu-link" href="series.html">📺 Séries</a>
+            <button class="category-trigger" id="categoryTrigger" aria-expanded="false">▸ Categorias</button>
+            <div class="submenu" id="categorySubmenu">
+                <a href="categorias/comedia.html">Comédia</a><a href="categorias/terror.html">Terror</a>
+                <a href="categorias/acao.html">Ação</a><a href="categorias/drama.html">Drama</a>
+            </div>
+        </nav>
+    </header>
+    <main class="page-wrap"><a class="back-link" href="index.html">← Voltar para a página inicial</a>
+        <section id="detalhe"></section>
+    </main>
+    <footer>JERIMUM • LOCADORA</footer>
+
+    <script src="js/dados.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+        // Recupera o identificador do filme ou série enviado através da URL.
+        const id = new URLSearchParams(window.location.search).get("id");
+        // Procura no catálogo o título que corresponde ao identificador recebido.
+        const item = catalogo.find(i => i.id === id);
+        const area = document.getElementById("detalhe");
+        if (!item) { area.innerHTML = '<p class="empty">Título não encontrado. <a href="index.html">Voltar ao início</a>.</p>'; }
+        else {
+            document.title = item.title + " | Jerimum";
+            // Monta a página de detalhes com sinopse, cartaz, curiosidades e elenco.
+            area.innerHTML = `<div class="detail-layout">${criarPoster(item)}<div>
+ <div class="eyebrow">${item.type} • ${item.year} • ${item.category}</div><h1>${item.title}</h1>
+ <p style="font-size:19px;line-height:1.6;color:#d0d1df">${item.synopsis}</p>
+ <button class="action-button" id="rentButton">Alugar ${item.type.toLowerCase()}</button>
+ </div></div>
+ <section class="detail-panel"><h2>Mais informações e curiosidades</h2><ul>${item.facts.map(f => `<li>${f}</li>`).join("")}</ul></section>
+ <section class="detail-panel"><h2>Elenco principal</h2><p>${item.cast.join(" • ")}</p></section>`;
+            // Simula o aluguel do título exibindo uma mensagem quando o usuário clica no botão.
+            document.getElementById("rentButton").addEventListener("click", () => alert("Pedido de aluguel registrado na simulação! Obrigado por escolher a Jerimum."));
+        }
+    </script>
+</body>
+
+</html>
